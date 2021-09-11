@@ -10,6 +10,18 @@ python = "^3.9"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"
+pytest = "^6.2.5"
+
+[tool.pytest.ini_options]
+python_files = [
+    "test*.py",
+    "*tests.py",
+]
+minversion = "6.0"
+addopts = "-ra -q -v"
+testpaths = [
+    "api/tests",
+]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
