@@ -23,3 +23,5 @@ jobs:
         run: poetry install
       - name: Run tests
         run: poetry run pytest --cov='.' -v
+      - name: Send report to codecov.io
+        run: poetry run codecov
