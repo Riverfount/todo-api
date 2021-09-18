@@ -9,6 +9,7 @@ license = "GPLv3+"
 python = "^3.9"
 fastapi = "^0.68.1"
 uvicorn = {extras = ["standard"], version = "^0.15.0"}
+mongoengine = "^0.23.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"
