@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from mongoengine import connect
 
-connect('todo_api_db', host='mongodb://localhost')
+from api.config import settings
+
+connect('todo_api_db', host=settings.MONGO_URL)
 
 app = FastAPI()
 

@@ -5,7 +5,7 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from fastapi_jwt_auth import AuthJWT
 from pydantic import BaseModel
 
-# from api.config import settings
+from api.config import settings
 
 
 class JWTBearer(HTTPBearer):
@@ -38,8 +38,7 @@ class JWTBearer(HTTPBearer):
 
 
 class Settings(BaseModel):
-    # authjwt_secret_key: str = settings.JWT_SECRET
-    authjwt_secret_key: str = "AquiVemAMinhaSuperHyperTopSecretKey"
+    authjwt_secret_key: str = settings.JWT_SECRET
 
 
 # callback to get your configuration
