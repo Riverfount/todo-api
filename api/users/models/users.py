@@ -7,7 +7,7 @@ from api.utils.pydantic_oid import PyObjectId
 
 
 class TodoGroupedModel(BaseModel):
-    id: Optional[PyObjectId] = Field(..., alias='_id')
+    id: Optional[PyObjectId]
     name: str
 
 
@@ -20,7 +20,7 @@ class UserModel(BaseModel):
     user_todo: List[Optional[TodoGroupedModel]]
 
 
-class UserModelOutput(BaseModel):
+class UserModelOut(BaseModel):
     id: Optional[PyObjectId] = Field(..., alias='_id')
     name: str
     created_at: Optional[datetime] = datetime.now().replace(microsecond=0)
