@@ -12,6 +12,7 @@ uvicorn = {extras = ["standard"], version = "^0.15.0"}
 mongoengine = "^0.23.1"
 fastapi-jwt-auth = "^0.5.0"
 dynaconf = "^3.1.7"
+dnspython = "^2.1.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"
