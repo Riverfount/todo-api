@@ -6,7 +6,7 @@ authors = ["Vicente Marçal <vicente.marcal@gmail.com>"]
 license = "GPLv3+"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "3.9.5"
 fastapi = "^0.68.1"
 uvicorn = {extras = ["standard"], version = "^0.15.0"}
 mongoengine = "^0.23.1"
