@@ -18,10 +18,10 @@ class TodoGroupedData(EmbeddedDocument):
 
 class UserData(Document):
     name = StringField(required=True)
-    created_at = DateTimeField(default=datetime.now)
+    created_at = DateTimeField(default=datetime.now().replace(microsecond=0))
     email = EmailField(required=True)
     password = StringField(required=True)
-    user_todo = EmbeddedDocumentListField(TodoGroupedData)
+    user_todo = EmbeddedDocumentListField(TodoGroupedData, required=False)
 
     meta = {
         "collection": "user",
