@@ -20,7 +20,12 @@ class UserModel(BaseModel):
     user_todo: List[Optional[TodoGroupedModel]]
 
 
-class UserModelOut(BaseModel):
+class UserAllModelOut(BaseModel):
+    id: Optional[PyObjectId] = Field(..., alias='_id')
+    name: str
+
+
+class UserDetailModelOut(BaseModel):
     id: Optional[PyObjectId] = Field(..., alias='_id')
     name: str
     created_at: Optional[datetime] = datetime.now().replace(microsecond=0)

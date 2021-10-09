@@ -20,6 +20,7 @@ pytest = "^6.2.5"
 requests = "^2.26.0"
 pytest-cov = "^2.12.1"
 codecov = "^2.1.12"
+freezegun = "^1.1.0"
 
 [tool.pytest.ini_options]
 python_files = [

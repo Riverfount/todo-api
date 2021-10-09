@@ -1,7 +1,7 @@
 from starlette import status
 
 from api.users.data.users import UserData
-from api.users.models.users import UserModelOut
+from api.users.models.users import UserAllModelOut
 
 
 def test_get_all_users_status_code_200_ok(client):
@@ -9,10 +9,9 @@ def test_get_all_users_status_code_200_ok(client):
     assert response.status_code == status.HTTP_200_OK
 
 
-def test_get_all_users_retrieve_all_users(mongo, client, users_data):
+def test_get_all_users_works_ok(mongo, client, users_data):
     for ud in users_data:
-        ud_instance = UserData(**ud)
-        ud_instance.save()
+        UserData(**ud).save()
     response = client.get('/api/v1/users')
     expected = UserData.objects().as_pymongo().first()
-    assert UserModelOut(**response.json()[0]) == UserModelOut(**expected)
+    assert UserAllModelOut(**response.json()[0]) == UserAllModelOut(**expected)
