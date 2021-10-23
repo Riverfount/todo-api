@@ -23,3 +23,13 @@ def test_get_user_detail_works_ok(mongo, client, users_data):
     expected = UserData.objects(id=user_id).as_pymongo().first()
 
     assert UserDetailModelOut(**response.json()) == UserDetailModelOut(**expected)
+
+
+def test_get_user_detail_fail_with_user_invalid(mongo, client):
+    user_id = '617402501347953bad'
+    response = client.get(f'/api/v1/users/{user_id}')
+    expected = {'detail': [{'loc': ['path', 'user_id'],
+                            'msg': 'ObjectId required or invalid',
+                            'type': 'type_error'}]}
+    assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
+    assert response.json() == expected
