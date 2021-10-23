@@ -2,4 +2,6 @@
 omit =
     api/tests/*
     api/users/tests/*
+    api/todo/tests/*
     api/security/*
+    conftest.py
