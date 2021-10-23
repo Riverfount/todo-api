@@ -12,3 +12,9 @@ def get_users(user_id: PyObjectId = None):
         users_response = UserDetailModelOut(**user) if user else None
 
     return users_response
+
+
+def insert_user(user):
+    new_user = UserData(**user.dict())
+    new_user.save()
+    return UserDetailModelOut(**new_user.to_mongo())
