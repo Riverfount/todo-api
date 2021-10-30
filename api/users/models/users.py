@@ -63,7 +63,7 @@ class UserUpdateModelIn(BaseModel):
     name: Optional[str]
     password: Optional[str]
     email: Optional[str]
-    user_todo: List[Optional[TodoGroupedModel]]
+    user_todo: Optional[List[Optional[TodoGroupedModel]]]
 
     class Config:
         schema_extra = {
